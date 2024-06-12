@@ -1,21 +1,20 @@
-#!/usr/bin/env python3
-# lib/debug.py
-
-from models.__init__ import CONN, CURSOR
-from models.products import Product
+# lib/seed.py
 from models.customer import Customer
+from models.products import Product
 from models.sales import Sales
 
-import ipdb
-
-def reset_database():
-    Product.drop_table()
-    Product.create_table()
+def seed_database():
+    # Drop tables if they exist
     Sales.drop_table()
-    Sales.create_table()
     Customer.drop_table()
-    Customer.create_table()
+    Product.drop_table()
 
+    # Create tables
+    Customer.create_table()
+    Product.create_table()
+    Sales.create_table()
+
+    # Create seed data for Customers
     customer_1 = Customer.create("Alice Johnson", "alice@example.com")
     customer_2 = Customer.create("Bob Smith", "bob@example.com")
     customer_3 = Customer.create("Carol White", "carol@example.com")
@@ -38,7 +37,6 @@ def reset_database():
     Sales.create(product_1.id, customer_3.id, 1, "2024-06-04")
     Sales.create(product_2.id, customer_3.id, 1, "2024-06-05")
 
+    print("Seeded database")
 
-
-reset_database()    
-ipdb.set_trace()
+seed_database()
