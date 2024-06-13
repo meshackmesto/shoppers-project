@@ -8,8 +8,10 @@ from helpers import (
     update_products,
     delete_products,
     list_of_customers,
+    view_customer_by_name,
     add_customer,
-    delete_customer
+    delete_customer,
+    list_sales
 )
 
 
@@ -32,9 +34,13 @@ def main():
         elif choice == "6":
             list_of_customers()
         elif choice == "7":
-            add_customer()
+            view_customer_by_name()
         elif choice == "8":
+            add_customer()
+        elif choice == "9":
             delete_customer()
+        elif choice == "10":
+            list_sales()
         else:
             print("Invalid choice")
 
@@ -48,8 +54,10 @@ def menu():
     print("4.update products")
     print("5.delete products")
     print("6.view all customers")
-    print("7.add new customer")
-    print("8.delete customer")
+    print("7.view customer by name")
+    print("8.add new customer")
+    print("9.delete customer")
+    print("10.view all sales")
 
 if __name__ == "__main__":
     main()

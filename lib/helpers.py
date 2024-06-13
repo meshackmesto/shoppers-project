@@ -2,6 +2,7 @@
 
 from models.products import Product
 from models.customer import Customer
+from models.sales import Sales
 
 
 
@@ -68,7 +69,12 @@ def list_of_customers():
     customers = Customer.get_all()
     for customer in customers:
         print(customer)
-
+def view_customer_by_name():
+    name = input("Enter the name of the customer: ")
+    customers = Customer.find_by_name(name)
+    print(customers) if customers else print(
+        f"No customer found with name {name}"
+    )
 def add_customer():
     name = input("Enter customers name: ")
     email = input("Enter customers email: ")
@@ -88,3 +94,8 @@ def delete_customer():
             print("Error deleting customer: ", exc)
     else:
         print(f'Customer {id_} not found')
+
+def list_sales():
+    sales = Sales.get_all()
+    for sale in sales:
+        print(sale)

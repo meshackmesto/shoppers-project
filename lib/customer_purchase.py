@@ -69,17 +69,17 @@ def handle_purchase():
 root = tk.Tk()
 root.title("Customer Purchase")
 
-# Name entry
+# Name entry of the customer
 tk.Label(root, text="Name").grid(row=0)
 name_entry = tk.Entry(root)
 name_entry.grid(row=0, column=1)
 
-# Email entry
+# Email of the customer
 tk.Label(root, text="Email").grid(row=1)
 email_entry = tk.Entry(root)
 email_entry.grid(row=1, column=1)
 
-# Product name entry
+# Product name you enter
 tk.Label(root, text="Product Name").grid(row=2)
 product_name_entry = tk.Entry(root)
 product_name_entry.grid(row=2, column=1)
