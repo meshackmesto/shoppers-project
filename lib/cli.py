@@ -2,7 +2,14 @@
 
 from helpers import (
     exit_program,
-    helper_1
+    list_products,
+    find_products_by_name,
+    add_products,
+    update_products,
+    delete_products,
+    list_of_customers,
+    add_customer,
+    delete_customer
 )
 
 
@@ -13,7 +20,21 @@ def main():
         if choice == "0":
             exit_program()
         elif choice == "1":
-            helper_1()
+            list_products()
+        elif choice == "2":
+            find_products_by_name()
+        elif choice == "3":
+            add_products()
+        elif choice == "4":
+            update_products()
+        elif choice == "5":
+            delete_products()
+        elif choice == "6":
+            list_of_customers()
+        elif choice == "7":
+            add_customer()
+        elif choice == "8":
+            delete_customer()
         else:
             print("Invalid choice")
 
@@ -21,8 +42,14 @@ def main():
 def menu():
     print("Please select an option:")
     print("0. Exit the program")
-    print("1. Some useful function")
-
+    print("1.view all products")
+    print("2.find products by name")
+    print("3.add products")
+    print("4.update products")
+    print("5.delete products")
+    print("6.view all customers")
+    print("7.add new customer")
+    print("8.delete customer")
 
 if __name__ == "__main__":
     main()

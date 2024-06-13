@@ -13,7 +13,7 @@ def populate_products():
     products_listbox.delete(0, tk.END)
     products = Product.get_all()
     for product in products:
-        products_listbox.insert(tk.END, f"{product.name} - ${product.price} - Stock: {product.stock}")
+        products_listbox.insert(tk.END, f"{product.name} - ${product.price} - ${product.description} - Stock: {product.stock}")
 
 def populate_customers():
     customers_listbox.delete(0, tk.END)

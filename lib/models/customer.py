@@ -18,7 +18,7 @@ class Customer:
             CREATE TABLE IF NOT EXISTS customers (
             id INTEGER PRIMARY KEY,
             name TEXT,
-            email TEXT)
+            email VAR(20) TEXT)
         """
         CURSOR.execute(sql)
         CONN.commit()
